@@ -8,7 +8,7 @@ function App() {
   let [pageNumber, setPageNumber] = useState(1);
   const [featchedData, setFeatchedData] = useState([]);
   let { info , results} = featchedData;
-  console.log(info);
+  // console.log(info);
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
 
@@ -24,7 +24,7 @@ function App() {
   // let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
   return (
     <div className="App">
-      <h1 className="text-center ubuntu">Rick & Morty <span className="text-primary">wiki</span></h1>
+      <h1 className="text-center my-5 ubuntu">Rick & Morty <span className="text-primary">wiki</span></h1>
       <div className="container">
         <div className="row">
           <div className="col-3">
@@ -32,7 +32,7 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards />
+              <Cards results={results}/>
             </div>
           </div>
         </div>
