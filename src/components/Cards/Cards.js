@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Cards = ({ results }) => {
-    console.log(results);
+    // console.log(results);
     let display
     if (results) {
 
