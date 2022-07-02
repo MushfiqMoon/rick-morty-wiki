@@ -44,7 +44,7 @@ function App() {
               <Cards results={results} />
             </div>
             <div className="row">
-              <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+              <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
             </div>
           </div>
         </div>
