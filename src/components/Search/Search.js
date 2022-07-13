@@ -12,8 +12,9 @@ function Search({ setPageNumber, setSearch }) {
                         setSearch(e.target.value);
                     }}
                     type="text" className="form-control wiki-form mx-2" />
-                {/* <button onClick={e=>e.target.value} className="btn btn-primary fs-5">Search</button> */}
+                {/* <button onClick={e=>e.preventDefault()} className="btn btn-primary fs-5">Clear</button> */}
                 <button  className="btn btn-primary fs-5">Clear</button>
+
 
 
             </form>

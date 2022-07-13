@@ -41,7 +41,7 @@ const Cards = ({ results }) => {
 
 
     } else {
-        display = `No data found`
+        display = `No Chracter found :/`
     }
     return (
 

@@ -8,12 +8,18 @@ import Search from './components/Search/Search';
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1);
-  const [search, setSearch] = useState("");
-  const [featchedData, setFeatchedData] = useState([]);
+  let [search, setSearch] = useState("");
+  let [status, setStatus] = useState("")
+  let [gender, setGender] = useState("")
+  let [species, setSpecies] = useState("")
+
+  let [featchedData, setFeatchedData] = useState([]);
   let { info, results } = featchedData;
+  
   // console.log(pageNumber);
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     (async function () {
@@ -24,22 +30,22 @@ function App() {
 
   }, [api])
 
-  // let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+  
   return (
     <div className="App">
       <h1 className="text-center my-5 ubuntu">Rick & Morty <span className="text-primary">wiki</span></h1>
       <div className="container">
-
+        <div className="row">
+          <div className="col-12">
+            <Search setPageNumber={setPageNumber} setSearch={setSearch} />
+          </div>
+        </div>
         <div className="row">
           <div className="col-3">
-            <Filters />
+            <Filters setSpecies={setSpecies} setGender={setGender} setStatus={setStatus} setPageNumber={setPageNumber}/>
           </div>
           <div className="col-8">
-            <div className="row">
-              <div className="col-12">
-                <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
-              </div>
-            </div>
+
             <div className="row">
               <Cards results={results} />
             </div>
